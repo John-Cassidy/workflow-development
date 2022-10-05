@@ -38,6 +38,6 @@ jobs:
 
       - name: Commit Runner Status
         run: |
-          for statusFile in ${{steps.runner-status.outputs.statusFiles}}; do
+          for statusFile in ${{steps.runner-status.outputs.statusFiles[@]}}; do
             echo "$statusFile"
           done
