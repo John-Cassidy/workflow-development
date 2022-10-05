@@ -31,11 +31,16 @@ jobs:
           python -m pip install --upgrade pip
 
       # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
+      - name: Record Runner Status
+        id: runner-status
+        run: |
+          python3 ./.github/update_README.py
 
       # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
+      - name: Commit Runner Status
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          statusFiles = ${{steps.runner-status.outputs.statusFiles}}
+          echo ${{statusFiles}}
+          for statusFile in ${{statusFiles}}; do
+            echo "$statusFile"
+          done
