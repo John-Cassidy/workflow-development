@@ -33,18 +33,11 @@ jobs:
       - name: Record Runner Status
         id: runner-status
         run: |
-          output=$(python update-readme.py)
+          output=($(python update-readme.py | tr -d '[],'))
           echo "::set-output name=statusFiles::$output"
 
       - name: Commit Runner Status
         run: |
-          declare -a statusFilesArray = ${{steps.runner-status.outputs.statusFiles}}
-          arrayLength=${#statusFilesArray[@]}
-
-          for ((i=0; i<arrayLength; i++)); do
-            echo "index: $i, value: '${statusFilesArray[$i]}'"
+          for statusFile in ${{steps.runner-status.outputs.statusFiles}}; do
+            echo "'$statusFile'"
           done
-
-          # for statusFile in ${{steps.runner-status.outputs.statusFiles}}; do
-          #   echo "'$statusFile'"
-          # done
