@@ -34,7 +34,7 @@ jobs:
       - name: Record Runner Status
         id: runner-status
         run: |
-          python3 .github/update_README.py
+          python update_readme.py
 
       # Runs a set of commands using the runners shell
       - name: Commit Runner Status
