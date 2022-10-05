@@ -10,6 +10,6 @@ statusFiles.append("history/file3.csv")
 statusFiles.append("history/file4.csv")
 statusFiles.append("history/file5.csv")
 
-# print(f"::set-output name=statusFiles2::{statusFiles}")
+# print(f"::set-output name=statusFiles::{statusFiles}")
 
 print(f"{statusFiles}")

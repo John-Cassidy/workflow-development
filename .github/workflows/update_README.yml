@@ -40,4 +40,4 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Commit Runner Status
         run: |
-          echo ${{steps.runner-status.outputs.statusFiles2}}
+          echo ${{steps.runner-status.outputs.statusFiles}}
