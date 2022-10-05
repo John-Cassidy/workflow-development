@@ -1,3 +1,5 @@
+import json
+
 repo_name = "workflow-development"
 owner = "John-Cassidy"
 owner_repo_name = f"{owner}/{repo_name}"
@@ -12,4 +14,6 @@ statusFiles.append("history/file5.csv")
 
 # print(f"::set-output name=statusFiles::{statusFiles}")
 
-print(f"{statusFiles}")
+# print(f"{statusFiles}")
+
+print(json.dumps({"statusFiles": statusFiles}))
