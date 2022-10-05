@@ -39,7 +39,7 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Commit Runner Status
         run: |
-          statusFiles = ${{steps.runner-status.outputs.statusFiles}}
+          statusFiles = ${{steps.runner-status.outputs.statusFiles2}}
           echo ${{statusFiles}}
           for statusFile in ${{statusFiles}}; do
             echo "$statusFile"
