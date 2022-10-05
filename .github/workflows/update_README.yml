@@ -38,6 +38,13 @@ jobs:
 
       - name: Commit Runner Status
         run: |
-          for statusFile in ${{steps.runner-status.outputs.statusFiles}}; do
-            echo "'$statusFile'"
+          declare -a statusFilesArray = ${{steps.runner-status.outputs.statusFiles}}
+          arrayLength=${#statusFilesArray[@]}
+
+          for ((i=0; i<arrayLength; i++)); do
+            echo "index: $i, value: '${statusFilesArray[$i]}'"
           done
+
+          # for statusFile in ${{steps.runner-status.outputs.statusFiles}}; do
+          #   echo "'$statusFile'"
+          # done
