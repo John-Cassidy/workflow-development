@@ -36,6 +36,10 @@ jobs:
           output=$(python update-readme.py)
           echo $output.statusFiles
 
+          for statusfile in $output.statusFiles; do
+            echo $statusfile
+          done
+
       # - name: Record Runner Status
       #   id: runner-status
       #   run: |
