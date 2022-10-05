@@ -34,7 +34,7 @@ jobs:
         id: runner-status
         run: |
           output=($(python update-readme.py | tr -d '[],'))
-          echo "::set-output name=statusFiles::$output"
+          echo "::set-output name=statusFiles::$output[@]"
 
       - name: Commit Runner Status
         run: |
