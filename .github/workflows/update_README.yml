@@ -34,6 +34,7 @@ jobs:
         id: runner-status
         run: |
           statusFiles=$(python update-readme.py)
+          echo $statusFiles
           for statusFile in $statusFiles; do
             echo $statusFile
           done
