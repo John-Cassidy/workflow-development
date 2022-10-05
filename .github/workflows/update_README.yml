@@ -35,7 +35,7 @@ jobs:
         run: |
           statusFiles=$(python update-readme.py)
           for statusFile in $statusFiles; do
-            echo "'$statusFile'"
+            echo $statusFile
           done
 
       # - name: Commit Runner Status
