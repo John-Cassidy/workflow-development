@@ -14,6 +14,9 @@ statusFiles.append("history/file5.csv")
 
 # print(f"::set-output name=statusFiles::{statusFiles}")
 
-print(f"{statusFiles}")
+target = {39: None, 44: None, 91: None, 93: None}
+print(str(statusFiles).translate(target))
+
+# print(f"{statusFiles}")
 
 # print(json.dumps({"statusFiles": statusFiles}))
