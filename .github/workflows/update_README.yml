@@ -33,21 +33,11 @@ jobs:
       - name: Record Runner Status
         id: runner-status
         run: |
-          output=$(python update-readme.py)
-          echo $output.statusFiles
-
-          for statusfile in $output.statusFiles; do
-            echo $statusfile
+          statusFiles=$(python update-readme.py)
+          echo $statusFiles
+          for statusFile in $statusFiles; do
+            echo $statusFile
           done
-
-      # - name: Record Runner Status
-      #   id: runner-status
-      #   run: |
-      #     statusFiles=$(python update-readme.py)
-      #     echo $statusFiles
-      #     for statusFile in $statusFiles; do
-      #       echo $statusFile
-      #     done
 
       # - name: Commit Runner Status
       #   run: |
